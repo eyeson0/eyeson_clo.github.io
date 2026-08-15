@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EYESON — Create Account</title>
+  <meta name="description" content="EYESON — premium luxury fashion. Designed for those who lead, not follow."/>
+  <link rel="icon" href="images/logo/logo.png"/>
+  <link rel="stylesheet" href="css/theme.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/header.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body data-page="register">
+  <div id="header"></div>
+<!-- ================= REGISTER PAGE ================= -->
+<div class="auth-wrap">
+  <div class="auth-card">
+    <img class="auth-logo" src="images/logo/logo.png" alt="EYESON"
+         onerror="this.outerHTML='<span class=&quot;logo-fallback&quot;>EYESON</span>'"/>
+    <h2 class="headline-md" style="font-size:1.6rem">JOIN THE VISION</h2>
+    <p class="text-soft">Create your EYESON account.</p>
+    <form id="regForm">
+      <div class="field"><label>Full Name</label><input type="text" id="regName" required placeholder="Your name"/></div>
+      <div class="field"><label>Email</label><input type="email" id="regEmail" required placeholder="you@example.com"/></div>
+      <div class="field"><label>Password</label><input type="password" id="regPass" required minlength="4" placeholder="••••••••"/></div>
+      <!-- Register button -->
+      <button class="btn btn-solid" type="submit" style="width:100%">Create Account</button>
+    </form>
+    <p class="auth-alt">Already have an account? <a href="login.html">Sign in</a></p>
+  </div>
+</div>
+<script>
+  /* Store the new user locally and enter the account area */
+  document.getElementById("regForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    eyesonLogin(document.getElementById("regEmail").value, document.getElementById("regName").value);
+  });
+</script>
+  <div id="footer"></div>
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

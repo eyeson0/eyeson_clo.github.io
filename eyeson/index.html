@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EYESON — LIMITLESS. | Luxury Fashion</title>
+  <meta name="description" content="EYESON — premium luxury fashion designed for those who lead, not follow."/>
+  <link rel="icon" href="images/logo/logo.png"/>
+  <!-- Design system -->
+  <link rel="stylesheet" href="css/theme.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/header.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/home.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body data-page="home">
+  <div id="header"></div>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero">
+    <!-- Hero background — replace images/hero/hero-1.jpg, no code change -->
+    <div class="hero-bg">
+      <img src="images/hero/hero-1.jpg" alt="EYESON campaign"
+           onerror="this.remove(); this.closest('.hero-bg').style.background='linear-gradient(135deg,#000 0%,#2b2b2b 55%,#000 100%)'"/>
+      <!-- Optional video background: drop campaign.mp4 into images/videos/ -->
+      <video autoplay muted loop playsinline style="display:none" id="heroVideo">
+        <source src="images/videos/campaign.mp4" type="video/mp4"/>
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <!-- Official EYESON logo -->
+      <img class="hero-logo" src="images/logo/logo.png" alt="EYESON"
+           onerror="this.outerHTML='<span class=&quot;logo-fallback&quot; style=&quot;color:#fff;font-family:var(--font-display);font-weight:800;font-size:2.4rem;letter-spacing:.5em;display:block;margin-bottom:24px&quot;>EYESON</span>'"/>
+      <!-- HERO TITLE -->
+      <h1 class="headline-xl">LIMITLESS.</h1>
+      <!-- HERO SUBTITLE -->
+      <p class="hero-sub">Designed for those who lead, not follow.</p>
+      <!-- Hero buttons -->
+      <div class="hero-cta">
+        <!-- Shop Button -->
+        <a class="btn btn-light" href="collections.html?category=all">Shop Now</a>
+        <!-- Explore Button -->
+        <a class="btn btn-outline btn-light" href="#main-collection">Explore Collection</a>
+      </div>
+    </div>
+
+    <!-- Mouse scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="mouse"></div><span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ================= MAIN COLLECTION (signature three-model carousel) ================= -->
+  <section class="section main-collection" id="main-collection">
+    <div class="container">
+      <div class="section-head">
+        <!-- Collection Title -->
+        <p class="eyebrow">Main Collection</p>
+        <h2 class="headline-lg">LIMITLESS.</h2>
+        <!-- Collection Subtitle -->
+        <p class="text-soft">Designed for those who lead, not follow.</p>
+      </div>
+
+      <!-- Three-model stage (built by carousel.js) -->
+      <div class="mc-stage" id="mcStage">
+        <button class="mc-arrow prev" id="mcPrev" aria-label="Previous look">←</button>
+        <button class="mc-arrow next" id="mcNext" aria-label="Next look">→</button>
+      </div>
+
+      <!-- Pagination: 1 / 5 with animated progress bars -->
+      <div class="mc-pagination">
+        <span class="mc-count" id="mcCount">1 / 5</span>
+        <div class="mc-bars">
+          <span class="mc-bar active"></span><span class="mc-bar"></span><span class="mc-bar"></span><span class="mc-bar"></span><span class="mc-bar"></span>
+        </div>
+      </div>
+
+      <!-- Details: left / center / right -->
+      <div class="mc-details" id="mcDetails">
+        <div class="mc-detail-block" id="mcLeft"></div>
+        <div class="mc-detail-block" id="mcCenter"></div>
+        <div class="mc-detail-block" id="mcRight"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SHOP BY CATEGORY ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Browse</p>
+        <h2 class="headline-md">Shop by Category</h2>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= NEW ARRIVALS ================= -->
+  <section class="section" style="background:var(--bg-alt)">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Just Landed</p>
+        <h2 class="headline-md">New Arrivals</h2>
+      </div>
+      <div class="product-grid" id="newArrivals"></div>
+      <!-- View all button -->
+      <div class="center" style="margin-top:50px">
+        <a class="btn btn-outline" href="collections.html?category=new-arrivals">View All</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED COLLECTIONS ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Curated</p>
+        <h2 class="headline-md">Featured Collections</h2>
+      </div>
+      <div class="pdp-tabs center" id="featuredTabs" style="justify-content:center;border:none;margin-bottom:34px"></div>
+      <div class="featured-row" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= LOOKBOOK ================= -->
+  <section class="section lookbook">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Volume One</p>
+        <h2 class="headline-lg" style="color:#fff">THE LOOKBOOK.</h2>
+      </div>
+      <div class="lb-grid" id="lookbookGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED VIDEO ================= -->
+  <section class="campaign-video">
+    <!-- Campaign video — drop images/videos/campaign.mp4, no code change -->
+    <video autoplay muted loop playsinline poster="images/campaign/campaign-1.jpg" id="campaignVideo">
+      <source src="images/videos/campaign.mp4" type="video/mp4"/>
+    </video>
+    <div class="cv-overlay">
+      <p class="eyebrow" style="color:rgba(255,255,255,.7)">The Campaign</p>
+      <h2 class="headline-lg" style="color:#fff">SEEN. OR NEVER.</h2>
+      <!-- Explore Collection button -->
+      <a class="btn btn-light" href="collections.html?category=all">Explore Collection</a>
+    </div>
+  </section>
+
+  <!-- ================= CUSTOMER REVIEWS ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Word of Mouth</p>
+        <h2 class="headline-md">Customer Reviews</h2>
+      </div>
+      <div class="reviews-carousel">
+        <div class="reviews-track" id="reviewsTrack"></div>
+        <div class="reviews-nav">
+          <button id="revPrev" aria-label="Previous review">←</button>
+          <button id="revNext" aria-label="Next review">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INSTAGRAM FEED ================= -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">@eyeson</p>
+        <h2 class="headline-md">In the Wild</h2>
+      </div>
+      <div class="insta-grid" id="instaGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section class="section newsletter">
+    <div class="container">
+      <p class="eyebrow">The Inner Circle</p>
+      <h2 class="headline-md">Stay in sight.</h2>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" required aria-label="Email address"/>
+        <!-- Newsletter submit button -->
+        <button type="submit">Join</button>
+      </form>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <!-- Scripts: data → utils → components → features → boot -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
